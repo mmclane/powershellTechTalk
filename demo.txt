@@ -1,0 +1,44 @@
+#### All Commands are called cmdlets (pronounced Command-Lets)
+#### Every cmdlet has the format of verb - noun
+Get-Process
+#### What about other commands I run?
+dir
+Get-Alias -name dir
+Get-Alias
+#### What commands are available?
+Get-Command
+Get-Command -verb New
+Get-Command -noun Item
+#### What do these commands do and how do they work?
+get-help get-command
+get-help get-command -examples
+get-help get-command -online
+#### How do I add more commands?
+Get-Module
+Get-Module -ListAvailable
+Get-PSRepository
+Install-Module -Name AWSPowershell
+Import-Module AWSPowershell
+get-command -module AWSPowershell | measure-object
+#### Matt, dont forget to explain the pipeline!
+1,2,3,4 | foreach {$_ +10}
+Get-Process | where {$_.ProcessName -like "Google*"}
+Get-Process | where {$_.ProcessName -like "Google*"} | foreach {$_.kill()}
+#### Everything is an object
+Get-Member
+Get-Process | where {$_.ProcessName -like "Google*"}
+Get-Process | where {$_.ProcessName -like "Google*"} | get-Member
+Get-Process | where {$_.ProcessName -like "Google*"} | where {$_.Membertype -like "Method"}
+$proccess = get-Process
+#### You can output things in interesting ways
+get-command -verb format
+get-process | format-List
+get-command -verb ConvertTo
+get-process | ConvertTo-Json
+get-command -verb ConvertFrom
+Get-command -verb out
+get-process | out-gridview
+
+
+
+

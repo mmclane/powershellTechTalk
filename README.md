@@ -11,3 +11,4 @@ Someone later wanted to take a look at what I had done, so I started a project t
 Matt
 
 #How to use:
+From a powershell prompt, run ./powershellTechTalk.ps1

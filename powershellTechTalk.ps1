@@ -45,7 +45,7 @@ Write-host ""
 Pause
 cls
 
-start-demo "/Users/m.mclane/OneDrive - CRITEO/scripts/demo.txt"
+start-demo ./demo.txt
 
 cls
 get-content ./powershellrules.txt | foreach {write-host -ForegroundColor yellow $_}
